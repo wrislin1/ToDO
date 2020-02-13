@@ -7,6 +7,7 @@
 <title>Remove Entry</title>
 </head>
 <body>
+<header><a href="index.jsp">Return to Menu</a></header>
 Remove
 </body>
 </html>

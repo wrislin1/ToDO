@@ -7,6 +7,7 @@
 <title>Add Entry</title>
 </head>
 <body>
+<header><a href="index.jsp">Return to Menu</a></header>
 Add
 </body>
 </html>

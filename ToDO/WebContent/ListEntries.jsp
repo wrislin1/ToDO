@@ -7,6 +7,7 @@
 <title>List Entries</title>
 </head>
 <body>
+<header><a href="index.jsp">Return to Menu</a></header>
 List
 </body>
 </html>
