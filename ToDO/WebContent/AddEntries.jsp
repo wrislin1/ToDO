@@ -9,5 +9,16 @@
 <body>
 <header><a href="index.jsp">Return to Menu</a></header>
 Add
+	<hr>
+	<form action="EntryController" method="post">
+		<table>
+			<tr>
+				<td>Entry</td>
+				<td><input type="text" name="entry"></td>
+
+			</tr>
+		</table>
+		<input type="submit" value="Submuit">
+	</form>
 </body>
 </html>
