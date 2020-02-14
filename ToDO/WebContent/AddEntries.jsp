@@ -18,7 +18,7 @@ Add
 
 			</tr>
 		</table>
-		<input type="submit" value="Submuit">
+		<input type="submit" value="Submit">
 	</form>
 </body>
 </html>

@@ -7,9 +7,13 @@ import org.hibernate.cfg.Configuration;
 
 
 public class EntryDAO {
-	static SessionFactory factory; 
-	static Configuration con = new Configuration().configure();
+	public EntryDAO() {
+		
+	}
+	 
 	public void addEntry(String s) {
+		Configuration con = new Configuration().configure();
+		SessionFactory factory = con.buildSessionFactory();
 		Entries entry = new Entries();
 		entry.setEntry(s);
 		entry.setDate();
@@ -21,6 +25,8 @@ public class EntryDAO {
 	}
 	// delete entry from database
 	public void deleteEntry(int i) {
+		 Configuration con = new Configuration().configure();
+		 SessionFactory factory = con.buildSessionFactory();
 		Session session = factory.openSession();
 		Transaction tx = session.beginTransaction();
 		List<Entries> e = session.createQuery("From Entries").list();
@@ -31,6 +37,8 @@ public class EntryDAO {
 	}
 	// list entries
 	public void listEntries() {
+		 Configuration con = new Configuration().configure();
+		 SessionFactory factory = con.buildSessionFactory();
 		int n = 1;
 		Session session = factory.openSession();
 		Transaction tx = session.beginTransaction();
