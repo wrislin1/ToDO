@@ -12,7 +12,9 @@
 <hr>
 <p>Please choose an option</p>
 <a href="AddEntries.jsp" class="button">Add an Entry</a>
-<a href="RemoveEntries.jsp" class="button">Remove Entries</a>
+<form action="EntryController" method="post">
+<button id="rlist" type=submit value="R">Remove Entries</button>
+</form>
 <form action="EntryController" method="get">
 <button id="elist" type=submit value="List Entries">List Entries</button>
 </form>
