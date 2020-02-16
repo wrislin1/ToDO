@@ -36,22 +36,15 @@ public class EntryDAO {
 		session.close();
 	}
 	// list entries
-	public void listEntries() {
-		 Configuration con = new Configuration().configure();
-		 SessionFactory factory = con.buildSessionFactory();
-		int n = 1;
+	public List<Entries> listEntries() {
+		Configuration con = new Configuration().configure();
+		SessionFactory factory = con.buildSessionFactory();
 		Session session = factory.openSession();
 		Transaction tx = session.beginTransaction();
-		List<Entries> entry = session.createQuery("From Entries").list();
-		for(Entries e:entry)
-		{
-			System.out.println(n + " " + e);
-			n++;
-		}
-
+		List<Entries> entries = session.createQuery("From Entries").list();
 		tx.commit();
 		session.close();
-		System.out.println();
+		return entries;
 	}
 
 }
