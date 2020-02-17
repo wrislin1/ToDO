@@ -5,16 +5,18 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" href="styles.css">
 <title>Remove Entry</title>
 </head>
 <body>
 <header><a href="index.jsp">Return to Menu</a></header>
 <h1>Select Entries to remove</h1>
 <hr>
-<ol>	 
+<form action="EntryController" method ="post">	 
   <c:forEach var="entries" items="${listEntries}">
-  <li><c:out value="${entries.entry}" /></li>
+  <label><input type="checkbox" id="entry" name="entry" value ="${entries.id }"><c:out value="${entries.entry}" /></label>
  </c:forEach>
-</ol> 
+ <input type="submit" value="Submit">
+</form> 
 </body>
 </html>

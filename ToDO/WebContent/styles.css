@@ -1,6 +1,6 @@
 
 @charset "ISO-8859-1";
-         .button {
+         #button {
          background-color: #1c87c9;
          border: none;
          color: white;
@@ -13,7 +13,7 @@
          cursor: pointer;
          }
          
-  #elist {
+  #elist, #rlist {
   background-color: #1c87c9;
   border: none;
   color: white;
@@ -25,6 +25,22 @@
   cursor: pointer;
   text-align: center;
   
+}
+
+label {
+  display: block;
+  padding-left: 15px;
+  text-indent: -15px;
+}
+input {
+  width: 13px;
+  height: 13px;
+  padding: 0;
+  margin:0;
+  vertical-align: bottom;
+  position: relative;
+  top: -1px;
+  *overflow: hidden;
 }
 
          

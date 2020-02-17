@@ -11,7 +11,7 @@
 <h1>Welcome to the To Do List</h1>
 <hr>
 <p>Please choose an option</p>
-<a href="AddEntries.jsp" class="button">Add an Entry</a>
+<a id ="button" href="AddEntries.jsp" class="button">Add an Entry</a>
 <form action="EntryController" method="post">
 <button id="rlist" type=submit value="R">Remove Entries</button>
 </form>
