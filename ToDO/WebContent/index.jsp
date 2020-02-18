@@ -8,9 +8,8 @@
 <title>To Do List</title>
 </head>
 <body>
-<h1>Welcome to the To Do List</h1>
+<h1 id="menu">Welcome to the To Do List</h1>
 <hr>
-<p>Please choose an option</p>
 <div id ="div1">
 <form action="EntryController" method="get">
 <input id ="add" name="choice" value="add"/>

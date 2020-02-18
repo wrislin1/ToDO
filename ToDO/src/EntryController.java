@@ -57,7 +57,9 @@ public class EntryController extends HttpServlet {
 				break;
 		     default:
 		        entryDAO.addEntry(choice);
-		        dispatcher = request.getRequestDispatcher("AddEntries.jsp");
+		        request.setAttribute("added", true);
+		        request.setAttribute("choice", "add");
+		        dispatcher = request.getRequestDispatcher("index.jsp");
 		        dispatcher.forward(request, response);
 			}
 

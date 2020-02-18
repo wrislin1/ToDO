@@ -67,29 +67,43 @@ width: 100%;
   border: 3px solid grey;
 }
 
-#tp {
-	 visibility: hidden;
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
+#menu {
+	text-align: center;
 }
 
-#tp #tp1 {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
+ol{
+	list-style-type: none;
+	  margin: 0;
+  padding: 0;
 }
 
-#tp:hover #tp1 {
-  visibility: hidden;
+.even,.evenr{
+	background-color: #b8d1f3;
+}  
+
+.odd,.oddr{
+  background-color: #dae5f4;
+  }
+  
+  .evenr:hover,.oddr:hover{
+  border: 1px solid yellow;
+  }
+  
+#addtext {
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+
 }
-         
+
+.b {
+	display: inline;
+}
+  
+
+  
+
 

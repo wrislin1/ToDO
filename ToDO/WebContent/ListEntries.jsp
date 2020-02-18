@@ -7,6 +7,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" href="styles.css">
 <title>List Entries</title>
 </head>
 <body>
@@ -14,9 +15,13 @@
 <h1>Here is your To Do List!!!</h1>
 <hr>
 <ol>	 
-<c:forEach var="entries" items="${listEntries}">
-  <li><a title="${entries.getDate()}"><c:out value="${entries.entry}" /></a></li>
+<c:forEach var="entries" items="${listEntries}" varStatus="loopStatus">
+  <li class="${loopStatus.index % 2 == 0 ? 'even' : 'odd'}"><a title="${entries.getDate()}"><c:out value="${entries.entry}" /></a></li>
 </c:forEach>
 </ol> 
+<form action="EntryController" method="get">
+<input id ="remove" name="choice" value="remove"/>
+<button type=submit>Remove Entries</button>
+</form>
 </body>
 </html>
