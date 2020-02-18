@@ -29,8 +29,8 @@ public class EntryDAO {
 		 SessionFactory factory = con.buildSessionFactory();
 		Session session = factory.openSession();
 		Transaction tx = session.beginTransaction();
-		List<Entries> e = session.createQuery("From Entries").list();
-		Entries entry = (Entries)session.get(Entries.class,e.get(i-1).getId() );
+		//List<Entries> e = session.createQuery("From Entries").list();
+		Entries entry = (Entries)session.get(Entries.class,i );
 		session.delete(entry);
 		tx.commit();
 		session.close();

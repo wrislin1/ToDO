@@ -14,7 +14,7 @@
 <hr>
 <form action="EntryController" method ="post">	 
   <c:forEach var="entries" items="${listEntries}">
-  <label><input type="checkbox" id="entry" name="entry" value ="${entries.id }"><c:out value="${entries.entry}" /></label>
+  <label><input type="checkbox" id="entries" name="entries" value ="${entries.id }"><span><c:out value="${entries.entry}" /></span></label>
  </c:forEach>
  <input type="submit" value="Submit">
 </form> 

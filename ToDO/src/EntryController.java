@@ -1,6 +1,7 @@
 
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -33,20 +34,12 @@ public class EntryController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String rlist;
-		rlist = request.getServletPath();
-		if(rlist=="R")
-		{
-		request.setAttribute("listEntries", entryDAO.listEntries());
-        RequestDispatcher dispatcher = request.getRequestDispatcher("RemoveEntries.jsp");
-        dispatcher.forward(request, response);
-		}
-		
-		else {
+
+	
 			request.setAttribute("listEntries", entryDAO.listEntries());
 	        RequestDispatcher dispatcher = request.getRequestDispatcher("ListEntries.jsp");
 	        dispatcher.forward(request, response);
-		}
+		
 			
 	}
 
@@ -55,18 +48,30 @@ public class EntryController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String entry = null;
+		String[] values = null;
+		values = request.getParameterValues("entries");
 		entry = request.getParameter("entry");
-		if(entry==null)
+		
+		if(entry!=null)
 		{
+			entryDAO.addEntry(entry);
+		    RequestDispatcher dispatcher = request.getRequestDispatcher("AddEntries.jsp");
+		    dispatcher.forward(request, response);
+		}
+		else if(values != null) {
+		for(String e: values) {
+			entryDAO.deleteEntry(Integer.parseInt(e));
+		}
+		request.setAttribute("listEntries", entryDAO.listEntries());
+	    RequestDispatcher dispatcher = request.getRequestDispatcher("ListEntries.jsp");
+	    dispatcher.forward(request, response);
+		
+		}
+		
+		else {
 			request.setAttribute("listEntries", entryDAO.listEntries());
 	        RequestDispatcher dispatcher = request.getRequestDispatcher("RemoveEntries.jsp");
 	        dispatcher.forward(request, response);
-		}
-		else {
-		entryDAO.addEntry(entry);
-	    RequestDispatcher dispatcher = request.getRequestDispatcher("AddEntries.jsp");
-	    dispatcher.forward(request, response);
-		
 		}
 	}
 	
