@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
     
 <!DOCTYPE html>
 <html>
@@ -14,7 +15,7 @@
 <hr>
 <ol>	 
 <c:forEach var="entries" items="${listEntries}">
-  <li><c:out value="${entries.entry}" /></li>
+  <li><a title="${entries.getDate()}"><c:out value="${entries.entry}" /></a></li>
 </c:forEach>
 </ol> 
 </body>

@@ -10,11 +10,11 @@
 <header><a href="index.jsp">Return to Menu</a></header>
 Add
 	<hr>
-	<form action="EntryController" method="post">
+	<form action="EntryController" method="get">
 		<table>
 			<tr>
 				<td>Entry</td>
-				<td><input type="text" name="entry"></td>
+				<td><input type="text" name="choice"></td>
 
 			</tr>
 		</table>

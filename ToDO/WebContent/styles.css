@@ -4,7 +4,7 @@
          background-color: #1c87c9;
          border: none;
          color: white;
-         padding: 20px 34px;
+         padding: 20px 30px;
          text-align: center;
          text-decoration: none;
          display: inline-block;
@@ -13,19 +13,35 @@
          cursor: pointer;
          }
          
-  #elist, #rlist {
+  #elist, #rlist, #sadd {
   background-color: #1c87c9;
-  border: none;
+
   color: white;
   padding: 20px 34px;
   text-decoration: none;
-  margin: 4px 2px;
+  margin: auto;
   cursor: pointer;
   font-size: 20px;
   cursor: pointer;
   text-align: center;
   
 }
+
+  #elist, #rlist, #sadd {
+  background-color: #1c87c9;
+ width: 100%;
+  color: white;
+  padding: 20px 34px;
+  text-decoration: none;
+  margin: auto;
+  cursor: pointer;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  
+}
+
+
 
 label {
   display: block;
@@ -37,6 +53,43 @@ input[type=checkbox]:checked + span{
   text-decoration: line-through;
 }
 
+#remove, #list, #add {display:none;}
 
+#div1 {
+width: 50%;
+  margin: auto;
+  background-color: 1c87c9;
+}
+
+#div2,#div3,#div4 {
+width: 100%;
+  margin: auto;
+  border: 3px solid grey;
+}
+
+#tp {
+	 visibility: hidden;
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+#tp #tp1 {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+#tp:hover #tp1 {
+  visibility: hidden;
+}
          
 
