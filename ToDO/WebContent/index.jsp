@@ -8,22 +8,22 @@
 <title>To Do List</title>
 </head>
 <body>
-<h1 id="menu">Welcome to the To Do List</h1>
+<h1 id="menu">Welcome to your To Do List</h1>
 <hr>
 <div id ="div1">
-<form action="EntryController" method="get">
+<form action="EntryController" method="post">
 <input id ="add" name="choice" value="add"/>
 <div id="div2">
 <button id="sadd" type=submit>Add Entries</button>
 </div>
 </form>
-<form action="EntryController" method="get">
+<form action="EntryController" method="post">
 <input id ="remove" name="choice" value="remove"/>
 <div id="div3">
 <button id="rlist" type=submit>Remove Entries</button>
 </div>
 </form>
-<form action="EntryController" method="get">
+<form action="EntryController" method="post">
 <input id ="list" name="choice" value="list"/>
 <div id="div4">
 <button id="elist" type=submit>List Entries</button>

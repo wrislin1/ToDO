@@ -16,10 +16,10 @@
 <hr>
 <ol>	 
 <c:forEach var="entries" items="${listEntries}" varStatus="loopStatus">
-  <li class="${loopStatus.index % 2 == 0 ? 'even' : 'odd'}"><a title="${entries.getDate()}"><c:out value="${entries.entry}" /></a></li>
+  <li class="${loopStatus.index % 2 == 0 ? 'odd' : 'even'}"><a title="${entries.getDate()}"><c:out value="${entries.entry}" /></a></li>
 </c:forEach>
 </ol> 
-<form action="EntryController" method="get">
+<form action="EntryController" method="post">
 <input id ="remove" name="choice" value="remove"/>
 <button type=submit>Remove Entries</button>
 </form>

@@ -12,7 +12,7 @@
 <header><a href="index.jsp">Return to Menu</a></header>
 	<hr>
 	<div >
-	<form action="EntryController" method="get">
+	<form action="EntryController" method="post">
 		<table>
 			<tr>
 				<td>Entry</td>
@@ -23,13 +23,13 @@
 		<input class="b" type="submit" value="Submit">
 		
 	</form>
-	<form action="EntryController" method="get">
+	<form action="EntryController" method="post">
 <input id ="list" id ="addbutton" name="choice" value="list"/>
 <button class="b" type=submit>List Entries</button>
 </form>
 </div>
 	<c:if test="${added}">
-    <p>Entry has been added.</p>
+    <p>Entry has been added, you now have <c:out value="${count}" /> things left to do</p>
 	</c:if>
 </body>
 </html>
