@@ -12,16 +12,26 @@
 </head>
 <body>
 <header><a href="index.jsp">Return to Menu</a></header>
-<h1>Here is your To Do List!!!</h1>
+<h1>Here is Your To Do List!!!</h1>
 <hr>
 <ol>	 
 <c:forEach var="entries" items="${listEntries}" varStatus="loopStatus">
   <li class="${loopStatus.index % 2 == 0 ? 'odd' : 'even'}"><a title="${entries.getDate()}"><c:out value="${entries.entry}" /></a></li>
 </c:forEach>
 </ol> 
+<div>
+<form action="EntryController" method="post">
+<input id ="add" name="choice" value="add"/>
+<div class="listbuttons">
+<button type=submit>Add Entries</button>
+</div>
+</form>
 <form action="EntryController" method="post">
 <input id ="remove" name="choice" value="remove"/>
+<div class="listbuttons">
 <button type=submit>Remove Entries</button>
+</div>
 </form>
+</div>
 </body>
 </html>

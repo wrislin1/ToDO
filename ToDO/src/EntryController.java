@@ -35,35 +35,8 @@ public class EntryController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		RequestDispatcher dispatcher;
-		String choice = null;
-		choice = request.getParameter("choice");
-		if(choice!=null)
-		{
-			switch(choice) {
-			case "list":
-				request.setAttribute("listEntries", entryDAO.listEntries());
-		        dispatcher = request.getRequestDispatcher("ListEntries.jsp");
-		        dispatcher.forward(request, response);
-		        break;
-			case "remove":
-				request.setAttribute("listEntries", entryDAO.listEntries());
-		        dispatcher = request.getRequestDispatcher("RemoveEntries.jsp");
-		        dispatcher.forward(request, response);
-		        break;
-			case "add":
-		        dispatcher = request.getRequestDispatcher("AddEntries.jsp");
-		        dispatcher.forward(request, response);
-				break;
-		     default:
-		        entryDAO.addEntry(choice);
-		        request.setAttribute("added", true);
-		        request.setAttribute("choice", "add");
-		        dispatcher = request.getRequestDispatcher("index.jsp");
-		        dispatcher.forward(request, response);
-			}
 
-		}
+
 	}
 
 	/**
@@ -93,16 +66,9 @@ public class EntryController extends HttpServlet {
 				break;
 		     default:
 		        entryDAO.addEntry(choice);
-		        request.setAttribute("added", true);
-		        request.setAttribute("count", entryDAO.listEntries().size());
-		        request.setAttribute("choice", "add");
-		        dispatcher = request.getRequestDispatcher("AddEntries.jsp");
-		        dispatcher.forward(request, response);
+		        response.sendRedirect("AddEntries.jsp");
 			}
-
-		}	
-		
-
+		}			
 		else {
 			entries = request.getParameterValues("entries");
 			if(entries != null) {
@@ -118,18 +84,6 @@ public class EntryController extends HttpServlet {
 			     dispatcher = request.getRequestDispatcher("ListEntries.jsp");
 			    dispatcher.forward(request, response);
 			}
-		}
-		
-
-	}
-	
-	/*private void listEntries(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		EntryDAO entryDAO = new EntryDAO();
-		List<Entries> entries = entryDAO.listEntries();
-        request.setAttribute("listEntries", entries);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("ListEntries.jsp");
-        dispatcher.forward(request, response);
-	}*/
-		    
-
+		}		
+	}			    
 }

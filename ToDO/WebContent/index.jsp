@@ -8,7 +8,7 @@
 <title>To Do List</title>
 </head>
 <body>
-<h1 id="menu">Welcome to your To Do List</h1>
+<h1 id="menu">Welcome to Your To Do List</h1>
 <hr>
 <div id ="div1">
 <form action="EntryController" method="post">
@@ -26,9 +26,10 @@
 <form action="EntryController" method="post">
 <input id ="list" name="choice" value="list"/>
 <div id="div4">
-<button id="elist" type=submit>List Entries</button>
+<button id="elist" type=submit>View Your To Do List</button>
 </div>
 </form>
 </div>
+<hr>
 </body>
 </html>

@@ -98,10 +98,32 @@ ol{
   background-color: #f8f8f8;
 
 }
+.addbuttons{
 
-.b {
-	display: inline;
+	float: left;
+	margin-right: 5px;
+	margin-top: 5px;
+	position: relative;
+	
+
 }
+
+
+
+
+
+.listbuttons {
+		float: left;
+	margin-right: 5px;
+	margin-top: 5px;
+	
+	
+}
+
+#rbuttons {
+	margin-top: 5px;
+}
+
   
 
   

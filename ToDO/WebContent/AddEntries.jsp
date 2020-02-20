@@ -11,25 +11,19 @@
 <body>
 <header><a href="index.jsp">Return to Menu</a></header>
 	<hr>
-	<div >
-	<form action="EntryController" method="post">
-		<table>
-			<tr>
-				<td>Entry</td>
-				<td><input id="addtext" type="text" name="choice"></td>
 
-			</tr>
-		</table>
+	<form action="EntryController" method="post" id ="addform">
+	
+<input id="addtext" required type="text" name="choice" placeholder="What do you plan on doing?">
+		<div class="addbuttons" id ="b1">
 		<input class="b" type="submit" value="Submit">
-		
+		</div>
 	</form>
 	<form action="EntryController" method="post">
 <input id ="list" id ="addbutton" name="choice" value="list"/>
-<button class="b" type=submit>List Entries</button>
-</form>
+<div class="addbuttons">
+<button class="b" type=submit>View To Do List</button>
 </div>
-	<c:if test="${added}">
-    <p>Entry has been added, you now have <c:out value="${count}" /> things left to do</p>
-	</c:if>
+</form>
 </body>
 </html>

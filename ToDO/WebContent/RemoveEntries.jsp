@@ -16,8 +16,10 @@
   <c:forEach var="entries" items="${listEntries}" varStatus="loopStatus">
   <label class="${loopStatus.index % 2 == 0 ? 'evenr' : 'oddr'}"><input type="checkbox"  id="entries" name="entries" value ="${entries.id }"><span><a title="${entries.getDate()}"><c:out value="${entries.entry}" /></a></span></label>
  </c:forEach>
+ <div id = "rbuttons">
  <input type="submit" value="Submit">
- <input type="reset" value="Clear Selections">
+ <input type="reset" value="Clear">
+ </div>
 </form> 
 </body>
 </html>
