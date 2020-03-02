@@ -23,7 +23,7 @@
 <button id="rlist" type=submit>Remove Entries</button>
 </div>
 </form>
-<form action="EntryController" method="post">
+<form action="EntryController" method="get">
 <input id ="list" name="choice" value="list"/>
 <div id="div4">
 <button id="elist" type=submit>View Your To Do List</button>

@@ -19,7 +19,7 @@
 		<input class="b" type="submit" value="Submit">
 		</div>
 	</form>
-	<form action="EntryController" method="post">
+	<form action="EntryController" method="get">
 <input id ="list" id ="addbutton" name="choice" value="list"/>
 <div class="addbuttons">
 <button class="b" type=submit>View To Do List</button>

@@ -1,6 +1,7 @@
 
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -27,6 +28,7 @@ public class EntryController extends HttpServlet {
 	}
 	
     public EntryController() {
+    	
        
     }
 
@@ -34,7 +36,10 @@ public class EntryController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		RequestDispatcher dispatcher;
+		request.setAttribute("listEntries", entryDAO.entries);
+        dispatcher = request.getRequestDispatcher("ListEntries.jsp");
+        dispatcher.forward(request, response);
 
 
 	}
@@ -47,16 +52,12 @@ public class EntryController extends HttpServlet {
 		String choice = null;
 		String[] entries = null;
 		choice = request.getParameter("choice");
+		List<Integer> del = new ArrayList<>();
 		if(choice!=null)
 		{
 			switch(choice) {
-			case "list":
-				request.setAttribute("listEntries", entryDAO.listEntries());
-		        dispatcher = request.getRequestDispatcher("ListEntries.jsp");
-		        dispatcher.forward(request, response);
-		        break;
 			case "remove":
-				request.setAttribute("listEntries", entryDAO.listEntries());
+				request.setAttribute("listEntries", entryDAO.entries);
 		        dispatcher = request.getRequestDispatcher("RemoveEntries.jsp");
 		        dispatcher.forward(request, response);
 		        break;
@@ -73,14 +74,15 @@ public class EntryController extends HttpServlet {
 			entries = request.getParameterValues("entries");
 			if(entries != null) {
 		for(String e: entries) {
-			entryDAO.deleteEntry(Integer.parseInt(e));
+			del.add(Integer.parseInt(e));
 		}
-		request.setAttribute("listEntries", entryDAO.listEntries());
+		entryDAO.deleteEntry(del);
+		request.setAttribute("listEntries", entryDAO.entries);
 	     dispatcher = request.getRequestDispatcher("ListEntries.jsp");
 	    dispatcher.forward(request, response);
 		}
 			else {
-				request.setAttribute("listEntries", entryDAO.listEntries());
+				request.setAttribute("listEntries", entryDAO.entries);
 			     dispatcher = request.getRequestDispatcher("ListEntries.jsp");
 			    dispatcher.forward(request, response);
 			}
